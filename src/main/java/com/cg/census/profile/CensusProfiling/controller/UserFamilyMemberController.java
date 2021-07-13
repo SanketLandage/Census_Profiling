@@ -30,4 +30,13 @@ public class UserFamilyMemberController {
 		service.deleteMember(name);
 	}
 	
+<<<<<<< HEAD
+=======
+	@DeleteMapping("/deleteMemberById/{mem_id}")
+		public void deleteMember(@PathVariable("mem_id") int mem_id) {
+			LOG.info("DeleteMember");
+			service.deleteMemberById(mem_id);
+			//This is delete
+		}	
+>>>>>>> f2bd4f8b8b7b8d42e439e983a55c1dc2005085f1
 }
