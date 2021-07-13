@@ -9,4 +9,5 @@ import com.cg.census.profile.CensusProfiling.model.User;
 public interface UserRepository extends JpaRepository<User , Integer> {
 	
 	public abstract List<User> findByfirstName(String firstName);
+	
 }

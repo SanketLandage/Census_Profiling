@@ -17,9 +17,10 @@ public class UserController  {
 	@Autowired
 	private UserService service ;
 	
-	@PostMapping("/addUser")
-	public User addUser(@RequestBody User user) {
+	@PostMapping("/register")
+	public User userRegister(@RequestBody User user) {
 		LOG.info("addEmp");
-		return service.addUser(user);
+		return service.userRegister(user);
 	}
+	
 }
