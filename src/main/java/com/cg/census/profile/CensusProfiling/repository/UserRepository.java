@@ -12,4 +12,15 @@ public interface UserRepository extends JpaRepository<User , Integer> {
 	
 	public abstract List<User> findByfirstName(String firstName);
 	
+	
+	public abstract List<User> findUserByUid(int uid);
+	
+	public abstract List<User> findUserByFirstName(String firstName);
+	
+	public abstract List<User> findUserByLastName(String lastName);
+	
+	public abstract List<User> findUserByGender(String gender);
+	
+	public abstract List<User> findUserByEmail(String email);
+	
 }
