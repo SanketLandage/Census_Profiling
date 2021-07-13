@@ -32,6 +32,18 @@ public class UserFamilyMember {
 		super();
 	}
 
+	
+	public UserFamilyMember(int memId, String memFirstName, String memLastName, String memGender, String dob,
+			User user) {
+		super();
+		this.memId = memId;
+		this.memFirstName = memFirstName;
+		this.memLastName = memLastName;
+		this.memGender = memGender;
+		this.dob = dob;
+		this.user = user;
+	}
+
 
 	public int getMemId() {
 		return memId;

@@ -27,10 +27,6 @@ public class UserFamilyMemberController {
 		return service.addMember(user);
 	}
 	
-	@GetMapping("/getfamilymember/{uid}")
-	public UserFamilyMember getMember(@PathVariable (value="uid") int x) {
-		LOG.info("User Added Member");
-		return service.getMembers(x);
-	}
+	
 	
 }
