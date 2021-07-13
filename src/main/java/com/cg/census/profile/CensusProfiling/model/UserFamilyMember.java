@@ -1,9 +1,12 @@
 package com.cg.census.profile.CensusProfiling.model;
 
-import java.util.*;
-
-import javax.persistence.*;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 //import java.util.*;
 
 @Entity
@@ -24,17 +27,21 @@ public class UserFamilyMember {
 	@Column
 	private String dob;
 	
+	@JsonBackReference
 	@ManyToOne
 	private User user;
 	
+	
+
+
 	
 	public UserFamilyMember() {
 		super();
 	}
 
-	
-	public UserFamilyMember(int memId, String memFirstName, String memLastName, String memGender, String dob,
-			User user) {
+
+	public UserFamilyMember( int memId,String memFirstName, String memLastName, String memGender, String dob,User user
+			) {
 		super();
 		this.memId = memId;
 		this.memFirstName = memFirstName;

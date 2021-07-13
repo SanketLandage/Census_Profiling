@@ -1,7 +1,14 @@
 package com.cg.census.profile.CensusProfiling.model;
-import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import java.util.*;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "Users")
@@ -22,24 +29,45 @@ public class User {
 	
 	@Column
 	private int numOfKids;
-	
+	@JsonManagedReference
 	@OneToMany(mappedBy = "user")
 	private List<UserFamilyMember> usermMem = new ArrayList<>();
 	
 	public User() {
 		super();
 	}
+	
+	
+public User(int uid) {
+		super();
+		this.uid = uid;
+	}
 
-	public User(int uid, String firstName, String lastName) {
+
+//	public User(int uid, String firstName, String lastName) {
+//		super();
+//		this.uid = uid;
+//		this.firstName = firstName;
+//		this.lastName = lastName;
+//	}
+	public User(int uid, String firstName, String lastName, String gender, String email, int numOfKids,
+			List<UserFamilyMember> usermMem) {
 		super();
 		this.uid = uid;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.gender = gender;
+		this.email = email;
+		this.numOfKids = numOfKids;
+		this.usermMem = usermMem;
 	}
-
+	
+	
 	public int getUid() {
 		return uid;
 	}
+
+	
 
 	public void setUid(int uid) {
 		this.uid = uid;

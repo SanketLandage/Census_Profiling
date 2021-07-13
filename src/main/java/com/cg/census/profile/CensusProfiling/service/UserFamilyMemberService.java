@@ -7,7 +7,7 @@ import com.cg.census.profile.CensusProfiling.model.UserFamilyMember;
 import com.cg.census.profile.CensusProfiling.repository.UserFamilyMemberRepository;
 
 @Service
-public class UserFamilyMemberService {
+public class UserFamilyMemberService   {
 	
 	@Autowired
 	private UserFamilyMemberRepository memRepository;
@@ -15,8 +15,5 @@ public class UserFamilyMemberService {
 	public UserFamilyMember addMember(UserFamilyMember member) {
 		return memRepository.save(member);
 	}
-	
-	
-	
 	
 }
