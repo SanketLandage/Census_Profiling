@@ -56,12 +56,11 @@ public class UserController  {
 		return service.findUserByEmail(email);
 	}
 
-	@GetMapping("/getbyemail/{email}")
-	public List<User> getByEmail(@PathVariable("email") String email) {
 
 	@GetMapping("/getbyeGender/{gender}")
 	public List<User> getByGender(@PathVariable("gender") String gender) {
 		LOG.info("getByEmail");
->>>>>>> d0daa62a40aa5755b7a59b5bdc21703aae4cf0d7
+		return service.findUserByGender(gender);
+
 	}
 }
