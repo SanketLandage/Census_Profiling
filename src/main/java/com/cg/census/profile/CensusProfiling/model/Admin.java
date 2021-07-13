@@ -4,7 +4,6 @@ public class Admin {
 	String Username ;
 	String password;
 	
-	
 	public Admin(String username, String password) {
 		super();
 		Username = username;
