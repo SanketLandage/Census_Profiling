@@ -34,27 +34,33 @@ public class UserController  {
 		LOG.info("AllUsers");
 		return service.findAllUsers();
 	}
-	
-	//Get Users by First Name
-	
+
 	@GetMapping("/getbyfirstname/{firstName}")
 	public List<User> getByFirstName(@PathVariable("firstName") String firstName) {
 		LOG.info("getByFirstName");
 		return service.findUserByFirstName(firstName);
 	}
 
-	//Get User by Last Name
+
 	@GetMapping("/getbylastname/{lastName}")
 	public List<User> getByLastName(@PathVariable("lastName") String lastName) {
 		LOG.info("getBylastName");
 		return service.findUserByFirstName(lastName);
 	}
-	
+
 	
 	//Get user by Email
 	@GetMapping("/getbyemail/{email}")
 	public List<User> getByEmail(@PathVariable("email") String email) {
 		LOG.info("getByEmail");
 		return service.findUserByEmail(email);
+	}
+
+
+	@GetMapping("/getbyeGender/{gender}")
+	public List<User> getByGender(@PathVariable("gender") String gender) {
+		LOG.info("getByEmail");
+		return service.findUserByGender(gender);
+
 	}
 }
