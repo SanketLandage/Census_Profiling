@@ -39,5 +39,6 @@ public class UserFamilyMemberController {
 		public void deleteMember(@PathVariable("mem_id") int mem_id) {
 			LOG.info("DeleteMember");
 			service.deleteMemberById(mem_id);
+			//This is delete
 		}	
 }
