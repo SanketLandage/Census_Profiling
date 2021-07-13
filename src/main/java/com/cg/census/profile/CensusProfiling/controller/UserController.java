@@ -31,4 +31,21 @@ public class UserController  {
 		LOG.info("AllUsers");
 		return service.findAllUsers();
 	}
+	@GetMapping("/getbyfirstname/{firstName}")
+	public List<User> getByFirstName(@PathVariable("firstName") String firstName) {
+		LOG.info("getByFirstName");
+		return service.findUserByFirstName(firstName);
+	}
+
+	@GetMapping("/getbylastname/{lastName}")
+	public List<User> getByLastName(@PathVariable("lastName") String lastName) {
+		LOG.info("getBylastName");
+		return service.findUserByFirstName(lastName);
+	}
+
+	@GetMapping("/getbyemail/{email}")
+	public List<User> getByEmail(@PathVariable("email") String email) {
+		LOG.info("getByEmail");
+		return service.findUserByGender(email);
+	}
 }
