@@ -1,8 +1,7 @@
 package com.cg.census.profile.CensusProfiling.service;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cg.census.profile.CensusProfiling.model.User;
 import com.cg.census.profile.CensusProfiling.model.UserFamilyMember;
@@ -20,13 +19,9 @@ public class UserFamilyMemberService   {
 		return memRepository.save(member);
 	}
 	
-	//GetMapping
-	public List<UserFamilyMember> getAllFamilyMembers() {
-		return memRepository.findAll();
+	@Transactional
+	public void deleteMember(String name) {
+		memRepository.deleteBymemFirstName(name);
 	}
 	
-	//DeleteMapping
-	public void deleteMemberById(int id) {
-		memRepository.deleteById(id);
-	}
 }

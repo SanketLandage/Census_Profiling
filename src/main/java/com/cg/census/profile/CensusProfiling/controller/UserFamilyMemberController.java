@@ -1,13 +1,9 @@
 package com.cg.census.profile.CensusProfiling.controller;
 
-import java.util.List;
-import java.util.Optional;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,16 +25,18 @@ public class UserFamilyMemberController {
 		return service.addMember(user);
 	}
 	
-	@GetMapping("/getAllFamilyMembers")
-		public List<UserFamilyMember> getAllFamilyMembers() {
-		LOG.info("GetAllFamilyMembers");
-		return service.getAllFamilyMembers();
+	@DeleteMapping("/deletemember/{name}")
+	public void deleteMember(@PathVariable (value="name") String name) {
+		service.deleteMember(name);
 	}
 	
+<<<<<<< HEAD
 	@DeleteMapping("/deleteMemberById/{mem_id}")
 		public void deleteMember(@PathVariable("mem_id") int mem_id) {
 			LOG.info("DeleteMember");
 			service.deleteMemberById(mem_id);
 			//This is delete
 		}	
+=======
+>>>>>>> ee9aaa67b571a3e7b8e061987930e80d2246114d
 }
