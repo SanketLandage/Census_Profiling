@@ -43,7 +43,6 @@ public class UserService {
 	public List<User> findUserByEmail(String email){
 		LOG.info("findUserByEmail");
 		return repository.findUserByEmail(email);
-		
 	}
 
 	public List<User> findAllUsers() {

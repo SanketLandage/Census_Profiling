@@ -27,12 +27,15 @@ public class UserController  {
 		return service.userRegister(user);
 	}
 	
+	///Get All Users
+	
 	@GetMapping("/getAllUsers")
 	public List<User> getAllUsers() {
 		LOG.info("AllUsers");
 		return service.findAllUsers();
 	}
 	
+	//Get Users by First Name
 	
 	@GetMapping("/getbyfirstname/{firstName}")
 	public List<User> getByFirstName(@PathVariable("firstName") String firstName) {
@@ -40,15 +43,18 @@ public class UserController  {
 		return service.findUserByFirstName(firstName);
 	}
 
+	//Get User by Last Name
 	@GetMapping("/getbylastname/{lastName}")
 	public List<User> getByLastName(@PathVariable("lastName") String lastName) {
 		LOG.info("getBylastName");
 		return service.findUserByFirstName(lastName);
 	}
-
+	
+	
+	//Get user by Email
 	@GetMapping("/getbyemail/{email}")
 	public List<User> getByEmail(@PathVariable("email") String email) {
 		LOG.info("getByEmail");
-		return service.findUserByGender(email);
+		return service.findUserByEmail(email);
 	}
 }
