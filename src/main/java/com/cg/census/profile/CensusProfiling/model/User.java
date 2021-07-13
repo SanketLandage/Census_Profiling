@@ -43,7 +43,6 @@ public User(int uid) {
 		this.uid = uid;
 	}
 
-
 //	public User(int uid, String firstName, String lastName) {
 //		super();
 //		this.uid = uid;
@@ -60,14 +59,11 @@ public User(int uid) {
 		this.email = email;
 		this.numOfKids = numOfKids;
 		this.usermMem = usermMem;
-	}
-	
+	}	
 	
 	public int getUid() {
 		return uid;
-	}
-
-	
+	}	
 
 	public void setUid(int uid) {
 		this.uid = uid;
