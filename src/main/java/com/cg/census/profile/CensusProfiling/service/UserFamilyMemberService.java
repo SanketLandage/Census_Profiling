@@ -11,6 +11,8 @@ import com.cg.census.profile.CensusProfiling.repository.UserFamilyMemberReposito
 
 import jdk.internal.org.jline.utils.Log;
 
+//import jdk.internal.org.jline.utils.Log;
+
 @Service
 public class UserFamilyMemberService {
 
@@ -49,5 +51,32 @@ public class UserFamilyMemberService {
 	public List<UserFamilyMember> findByDob(String dob) {
 		return memRepository.findBydob(dob);
 	}
+	
+	
+	//Updating info
+	
+	public UserFamilyMember updateMemId(UserFamilyMember memId) {
+		return memRepository.save(memId);
+	}
+	
+	public UserFamilyMember updateMemDob(UserFamilyMember dob) {
+		return memRepository.save(dob);
+	}
+	
+	public UserFamilyMember updateMemFirstName(UserFamilyMember memFirstName) {
+		return memRepository.save(memFirstName);
+	}
+	
+	public UserFamilyMember updateMemLastName(UserFamilyMember memLastName) {
+		return memRepository.save(memLastName);
+	}
+	
+	public UserFamilyMember updateMemGender(UserFamilyMember gender) {
+		return memRepository.save(gender);
+	}
+	
+	public UserFamilyMember updateMemRelation(UserFamilyMember relation) {
+		return memRepository.save(relation);
+	}	
 	// Comment
 }
