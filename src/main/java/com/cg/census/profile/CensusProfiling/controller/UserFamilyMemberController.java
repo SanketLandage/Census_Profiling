@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 //import com.cg.census.profile.CensusProfiling.model.User;
 import com.cg.census.profile.CensusProfiling.model.UserFamilyMember;
 import com.cg.census.profile.CensusProfiling.service.UserFamilyMemberService;
+//import com.cg.spring.boot.demo.model.Employee;
 
 @RestController
 public class UserFamilyMemberController {
@@ -69,6 +71,49 @@ public class UserFamilyMemberController {
 	public List<UserFamilyMember> getMemberByDob(@PathVariable(value = "dob") String dob) {
 		LOG.info("Getting Family Members By Relation");
 		return service.findByDob(dob);
+	}
+	
+	//Updating mem_id
+	@PutMapping("/updatememid")
+	public UserFamilyMember updateMemId(@RequestBody UserFamilyMember memId) {
+		LOG.info("update memId");
+		return service.updateMemId(memId);
+	}
+	
+	//Updating date of birth
+	@PutMapping("/updatedob")
+	public UserFamilyMember updateMemDob(@RequestBody UserFamilyMember dob) {
+		LOG.info("update memDob");
+		return service.updateMemDob(dob);
+	}
+	
+	//Updating mem_first_name
+	@PutMapping("/updatefirstname")
+	public UserFamilyMember updateMemFirstName(@RequestBody UserFamilyMember memFirstName) {
+		LOG.info("update memFirstName");
+		return service.updateMemFirstName(memFirstName);
+	}
+	
+	
+	//Updating mem_last_name
+	@PutMapping("/updatelastname")
+	public UserFamilyMember updateMemLastName(@RequestBody UserFamilyMember memLastName) {
+		LOG.info("update memLastName");
+		return service.updateMemLastName(memLastName);
+	}
+	
+	//Updating mem_gender
+	@PutMapping("/updategender")
+	public UserFamilyMember updateMemGender(@RequestBody UserFamilyMember gender) {
+		LOG.info("update memGender");
+		return service.updateMemGender(gender);
+	}
+
+	//Updating relation
+	@PutMapping("/updaterelation")
+	public UserFamilyMember updateMemRelation(@RequestBody UserFamilyMember relation) {
+		LOG.info("update memRelation");
+		return service.updateMemRelation(relation);
 	}
 
 }
