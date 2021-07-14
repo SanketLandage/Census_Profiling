@@ -1,11 +1,28 @@
 package com.cg.census.profile.CensusProfiling.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="admin")
 public class Admin {
+	
+	@Id
+	int aId;
+	
+	@Column
 	String Username;
+	
+	@Column
 	String password;
 
-	public Admin(String username, String password) {
+	
+
+	public Admin(int aId, String username, String password) {
 		super();
+		this.aId = aId;
 		Username = username;
 		this.password = password;
 	}
@@ -25,5 +42,14 @@ public class Admin {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	// pub
+
+	public int getaId() {
+		return aId;
+	}
+
+	public void setaId(int aId) {
+		this.aId = aId;
+	}
+	
+	
 }
