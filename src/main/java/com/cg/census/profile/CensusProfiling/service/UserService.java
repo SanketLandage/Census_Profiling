@@ -12,6 +12,7 @@ import com.cg.census.profile.CensusProfiling.model.UserFamilyMember;
 import com.cg.census.profile.CensusProfiling.repository.UserRepository;
 
 
+
 @Service
 public class UserService {
 	public static final Logger LOG  = LoggerFactory.getLogger(UserFamilyMember.class);
@@ -48,4 +49,34 @@ public class UserService {
 	public List<User> findAllUsers() {
 		return repository.findAll();
 	}
+	public User userUidUpdate(User uid) {
+		LOG.info("updateUserUID");
+		return repository.save(uid);
+	}
+	public User userFirstNameUpdate(User firstName) {
+		LOG.info("pdateUserFirstName");
+		return repository.save(firstName);
+	}
+	public User userLastNameUpdate(User lastName) {
+		LOG.info("updateUserLastName");
+		return repository.save(lastName);
+	}
+	public User userGenderUpdate(User gender) {
+		LOG.info("updateUserGender");
+		return repository.save(gender);
+	}
+	public User userEmailUpdate(User email) {
+		LOG.info("updateUserEmail");
+		return repository.save(email);
+	}
+	public User userPasswordUpdate(User password) {
+		LOG.info("updateUserPassword");
+		return repository.save(password);
+	}
+	public User userNumofkidsUpdate(User numofKids) {
+		LOG.info("updateUsernumofkids");
+		return repository.save(numofKids);
+	}
+	
+	
 }
