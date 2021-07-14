@@ -1,3 +1,4 @@
+  
 package com.cg.census.profile.CensusProfiling.controller;
 
 import java.util.List;
@@ -8,11 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.census.profile.CensusProfiling.model.User;
 import com.cg.census.profile.CensusProfiling.service.UserService;
+
 
 @RestController
 public class UserController  {
@@ -63,4 +66,48 @@ public class UserController  {
 		return service.findUserByGender(gender);
 
 	}
-}
+	@PutMapping("/updatinguid")
+	public User userUidUpdate(@RequestBody User uid) {
+		LOG.info("updateUserUID");
+		return service.userUidUpdate(uid);
+	}
+	
+	@PutMapping("/updatingfirstname")
+	public User userFirstNameUpdate(@RequestBody User firstName) {
+		LOG.info("updateUserFirstName");
+		return service.userFirstNameUpdate(firstName);
+	}
+	
+	@PutMapping("/updatinglastname")
+	public User userLastNameUpdate(@RequestBody User lastName) {
+		LOG.info("updateUserLastName");
+		return service.userLastNameUpdate(lastName);
+	}
+	
+	@PutMapping("/updatinggender")
+	public User userGenderUpdate(@RequestBody User gender) {
+		LOG.info("updateUserGender");
+		return service.userGenderUpdate(gender);
+	}
+	
+	@PutMapping("/updatingemail")
+	public User userEmailUpdate(@RequestBody User email) {
+		LOG.info("updateUserEmail");
+		return service.userEmailUpdate(email);
+	}
+	
+	@PutMapping("/updatingpassword")
+	public User userPasswordUpdate(@RequestBody User password) {
+		LOG.info("updateUserPassword");
+		return service.userPasswordUpdate(password);
+	}
+	
+	@PutMapping("/updatingnumofkids")
+	public User userNumofkidsUpdate(@RequestBody User numofKids) {
+		LOG.info("updateUsernumofkids");
+		return service.userNumofkidsUpdate(numofKids);
+	}
+	
+	
+	
+	
