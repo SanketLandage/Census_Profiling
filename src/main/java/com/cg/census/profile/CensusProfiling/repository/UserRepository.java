@@ -19,4 +19,5 @@ public interface UserRepository extends JpaRepository<User , Integer> {
 	public abstract List<User> findUserByGender(String gender);
 
 	public abstract List<User> findUserByEmail(String email);
+	
 }

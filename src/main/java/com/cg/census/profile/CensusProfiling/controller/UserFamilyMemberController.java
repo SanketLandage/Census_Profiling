@@ -29,7 +29,7 @@ public class UserFamilyMemberController {
 		return service.addMember(user);
 	}
 
-	@DeleteMapping("/deletemember/{name}")
+	@DeleteMapping("/deleteMemberByName/{name}")
 	public void deleteMember(@PathVariable(value = "name") String name) {
 		service.deleteMember(name);
 	}
